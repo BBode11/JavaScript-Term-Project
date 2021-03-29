@@ -1,5 +1,5 @@
 The following website was created 3/2/2021 by Brandon Bode.
-It was updated on 3/21/2021.
+It was updated on 3/29/2021.
 
 The following website includes four pages including a simple homepage.
 As of right now each page has the same scheme and style. The idea behind the website is to provide fun and interactive games for younger kids to play.
