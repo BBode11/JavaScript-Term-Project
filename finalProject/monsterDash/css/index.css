@@ -1,0 +1,132 @@
+body {
+    font-family: monospace;
+    font-size: 1.3em;
+    
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    font-weight: 500;
+    color: ghostwhite;
+    font-size: 2em;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    text-decoration-line: underline;
+}
+h3 {
+    width: 25%;
+    color: white;
+    text-shadow: 2px 2px Red;
+}
+p {
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 2px 2px black;
+}
+nav {
+    margin: 0px;
+    width: 100%;
+    height: auto;
+}
+
+ header {
+    width: 100%;
+    position: relative;
+}
+ footer {
+     width: 100%;
+     position: relative;
+     color: white;
+ }
+
+article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section {
+    flex: 1;
+    background-color: none;
+    padding: 1%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 20%;
+    opacity: 1;
+}
+
+nav ul {
+    background: none;
+    box-shadow: 2px 2px 2px black;
+    padding: 10px;
+    border-radius: 10px;
+    list-style: none;
+    position: relative;
+    color: aliceblue;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+    nav ul li {
+        display: inline-flex;
+        margin: 10px;
+        padding: 15px;
+        color: none;
+    }
+
+        nav ul li:hover {
+            color: red;
+            font-size: 1em;
+        }
+
+        nav ul li a {
+            display: block;
+            border: 2px solid white;
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            text-shadow: 2px, 2px #6495ED;
+            text-decoration: none;
+        }
+
+        nav ul li:hover a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li:hover > ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+    nav ul ul {
+        display: none;
+        background-color: palevioletred;
+        border: 2px solid white;
+        border-radius: 0px;
+        padding: 0px;
+        position: absolute;
+        font-size: 1em;
+        z-index: 10;
+    }
+
+        nav ul ul li {
+            display: block;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            position: relative;
+            text-align: center;
+            background: palevioletred;
+        }
+
+            nav ul ul li a {
+                padding: 15px;
+                color: white;
+            }
+
+                nav ul ul li a:hover {
+                    background: white;
+                    color: palevioletred;
+                }
