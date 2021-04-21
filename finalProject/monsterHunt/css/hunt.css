@@ -1,0 +1,313 @@
+/*body {
+    font-family: monospace;
+    font-size: 1.3em;
+    background-image: url(../media/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    font-weight: 500;
+    color: ghostwhite;
+    font-size: 2em;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    text-decoration-line: underline;
+}
+/*
+.score {
+    background-color: white;
+    width: 15%;
+    height: 15%;
+    color: #ffffff;
+    top: 5%;
+    right: 5%;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+}
+*/
+/*Movement of the monster across the screen*/
+/*Change percentages to move the monsters in different ways.*/
+@charset "UTF-8";
+
+@keyframes monsterMove {
+    0% {
+        left: 150%;
+        top: 60%;
+    }
+
+    25% {
+        left: 80%;
+        top: 40%;
+    }
+
+    50% {
+        left: 30%;
+        top: 10%;
+    }
+
+    75% {
+        left: 70%;
+        top: 40%;
+    }
+
+    85% {
+        left: 10%;
+        top: 50%;
+    }
+
+    100% {
+        left: -50%;
+        top: 10%;
+    }
+}
+
+input + label {
+    position: absolute;
+    left: -100px;
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    display: block;
+    z-index: 5; /*Used to keep monster png on the top*/
+    transform: translate(-50%, -50%);
+    background: url(../media/monster1.png) no-repeat; /*left center;*/
+    background-position: -138px 0;
+}
+
+input:checked + label {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: rotate(120deg);
+    transform-origin: 60%;
+    z-index: -5;
+}
+/*nth-last-of-type is used because of group*/
+.monster:nth-last-of-type(1) {
+    animation: monsterMove 5s, linear 1s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(2) {
+    animation: monsterMove 8s, linear 1s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(3) {
+    animation: monsterMove 12s, linear 3s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(4) {
+    animation: monsterMove 15s, linear 4s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(5) {
+    animation: monsterMove 9s, linear 5s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(6) {
+    animation: monsterMove 16s, linear 6s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(7) {
+    animation: monsterMove 19s, linear 7s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(8) {
+    animation: monsterMove 21s, linear 8s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(9) {
+    animation: monsterMove 22s, linear 5s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(10) {
+    animation: monsterMove 24s, linear 6s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(11) {
+    animation: monsterMove 25s, linear 7s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(12) {
+    animation: monsterMove 29s, linear 8s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(13) {
+    animation: monsterMove 32s, linear 9s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(14) {
+    animation: monsterMove 6s, linear 10s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+.monster:nth-last-of-type(15) {
+    animation: monsterMove 4s, linear 5s infinite;
+    animation-direction: alternate;
+    cursor: crosshair;
+}
+
+/*.header {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 40px;
+    text-align: center;
+    width: 50%;
+    z-index: 2;
+    background-color: white;
+}
+
+    .header:before {
+        content: 'The Monster Hunt Game';
+        display: inline-block;
+        text-align: center;
+        margin-right: 10px;
+    }*/
+
+.score {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    width: 25%;
+    z-index: 2;
+    background-color: #333;
+    color: white;
+}
+
+    .score:after {
+        content: counter(score);
+        display: inline-block;
+    }
+
+    .score:before {
+        content: 'Score :';
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+input:checked {
+    counter-increment: score;
+}
+input {
+    color: black;
+    opacity: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    cursor: crosshair;
+    overflow: hidden;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url(../media/background.jpg);
+}
+
+/*body:before{
+    content: '';
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url(../media/background.jpg) repeat-x bottom left;
+}*/
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+    width: 100%;
+}
+
+    .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 15px 15px;
+        text-decoration: none;
+    }
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 15px 15px;
+        background-color: inherit;
+        font-family: inherit; 
+        margin: 0;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: forestgreen;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgrey;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px green;
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+        .dropdown-content a:hover {
+            background-color: lightgreen;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
